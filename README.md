@@ -1,6 +1,6 @@
 # Chess
 My JS-version of chess
-
+[Play it here](https://felixalbrigtsen.github.io/chess)
 
 ![Full screenshot](./screenshots/sc2.png)
 In this screenshot, we see multiple features of the game. 
