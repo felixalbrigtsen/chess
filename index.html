@@ -1,0 +1,104 @@
+<html lang="no">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chess</title>
+    <meta charset="UTF-8">
+
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        background: rgb(2,0,36);
+        background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(150,150,230,1) 35%, rgba(47,124,140,1) 71%);
+      }
+      #settingsDiv {
+        margin: 0 auto;
+        text-align: center;
+      }
+      #gameContainer {
+        width: 60%;
+        margin: auto;
+        text-align: center;
+      }
+      #canvasDiv {
+        text-align: center;
+        float: left;
+      }
+      p {
+        display: inline;
+      }
+      h3 {
+        display: inline;
+      }
+      h2 {
+        word-wrap: break-word;
+      }
+      canvas {
+        align-self: center;
+      }
+    </style>
+
+    <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
+    <script language="javascript" type="text/javascript" src="libraries/p5.sound.js"></script>
+    <script language="javascript" type="text/javascript" src="movement.js"></script>
+    <script language="javascript" type="text/javascript" src="sketch.js"></script>
+  </head>
+
+<body>
+  <br>
+  <div id="settingsDiv">
+    <button id="settings_reset">Reset</button>
+    <p>Sound: </p><input type="checkbox" id="settings_sound">
+    <p>Guide: </p><input type="checkbox" id="settings_guide" checked>
+    <p>Alternate Colors: </p><input type="checkbox" id="settings_color">
+    <p>Flip board: </p><input type="checkbox" id="settings_flip">
+    <br>
+    <br>
+    <p>Status: </p><h3 id="gameStatus"></h3>
+  </div>
+  <div id="gameContainer">
+    <div id="canvasDiv"></div>
+    <div id="scoreDiv">
+      <h2 id="whitePieceBox"></h2>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <h2 id="blackPieceBox"></h2>
+    </div>
+  </div>
+  <br>
+
+  <script>
+    //Setup script for HTML elements
+
+    document.getElementById("settings_reset").onclick = function() {
+      reset();
+    }
+
+    document.getElementById("settings_sound").onchange = function() {
+      setSound(document.getElementById("settings_sound").checked);
+    }
+
+    document.getElementById("settings_guide").onchange = function() {
+      showMarked = document.getElementById("settings_guide").checked;
+      drawBoard();
+    }
+
+    document.getElementById("settings_color").onchange = function() {
+      if (document.getElementById("settings_color").checked) {
+        colorScheme = 1;
+        pictures = set2;
+      } else {
+        colorScheme = 0;
+        pictures = set1;
+      }
+      drawBoard();
+    }
+
+    document.getElementById("settings_flip").onchange = function() {
+      flipBoard = document.getElementById("settings_flip").checked;
+      drawBoard();
+    }
+
+  </script>
+</body>
+</html>
