@@ -11,4 +11,4 @@ All captures pieces are also displayed on the right side of the board.
 
 
 
-###This website uses assets like audio and images, and they may be blocked by your browsers CORS cross-origin policies. To circumvent this, spin up a simple web server like `php -S 0.0.0.0:8000` or `python3 -m http.server`
+### This website uses assets like audio and images, and they may be blocked by your browsers CORS cross-origin policies. To circumvent this, spin up a simple web server like `php -S 0.0.0.0:8000` or `python3 -m http.server`
